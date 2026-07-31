@@ -6,10 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Only For Anu ❤️</title>
+<title>A Surprise For Anu ❤️</title>
 
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 
 <style>
@@ -23,7 +22,9 @@ box-sizing:border-box;
 
 body{
 
-height:100vh;
+min-height:100vh;
+
+font-family:Poppins,sans-serif;
 
 display:flex;
 
@@ -31,83 +32,368 @@ justify-content:center;
 
 align-items:center;
 
+overflow:hidden;
 
-font-family:Poppins,sans-serif;
+color:white;
+
+
+background:
+
+linear-gradient(
+120deg,
+#ff416c,
+#ff4b2b,
+#ff758c,
+#ff7eb3
+);
+
+
+background-size:400% 400%;
+
+animation:bgMove 10s infinite alternate;
+
+
+}
+
+
+
+@keyframes bgMove{
+
+
+0%{
+
+background-position:left;
+
+}
+
+
+100%{
+
+background-position:right;
+
+}
+
+
+}
+
+
+
+/* ===================
+LOADER
+=================== */
+
+
+#loader{
+
+
+position:fixed;
+
+inset:0;
+
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
 
 
 background:
 
 linear-gradient(
 135deg,
-#ff758c,
-#ff7eb3,
-#ffd1dc
+#ff416c,
+#ff4b2b
 );
 
 
-color:white;
+z-index:100;
 
-overflow:hidden;
+
+animation:fadeIn 1s;
+
 
 }
 
 
 
-.box{
+.loader-heart{
 
 
-width:90%;
-
-max-width:450px;
+font-size:clamp(70px,15vw,120px);
 
 
-padding:40px;
+animation:
+
+heartbeat 1s infinite,
+rotate 3s infinite linear;
+
+
+}
+
+
+
+@keyframes heartbeat{
+
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+
+}
+
+
+
+@keyframes rotate{
+
+
+100%{
+
+filter:hue-rotate(360deg);
+
+}
+
+
+}
+
+
+
+.loader-title{
+
+
+font-family:'Great Vibes';
+
+
+font-size:
+
+clamp(40px,8vw,75px);
 
 
 text-align:center;
 
 
+margin-top:20px;
+
+
+animation:textGlow 2s infinite;
+
+
+}
+
+
+
+
+@keyframes textGlow{
+
+
+50%{
+
+text-shadow:0 0 30px white;
+
+}
+
+
+}
+
+
+
+
+.loader-subtitle{
+
+
+font-size:
+
+clamp(14px,3vw,20px);
+
+
+margin-top:10px;
+
+
+}
+
+
+
+
+.loading-bar{
+
+
+width:min(80vw,300px);
+
+
+height:10px;
+
+
 background:
 
-rgba(255,255,255,.2);
+rgba(255,255,255,.3);
 
 
-backdrop-filter:blur(20px);
+border-radius:50px;
 
 
-border-radius:30px;
+margin-top:30px;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.progress{
+
+
+height:100%;
+
+
+background:white;
+
+
+width:0;
+
+
+animation:load 3s forwards;
+
+
+}
+
+
+
+@keyframes load{
+
+
+100%{
+
+width:100%;
+
+}
+
+
+}
+
+
+
+
+
+/* ===================
+PASSWORD CARD
+=================== */
+
+
+.box{
+
+
+display:none;
+
+
+width:min(90%,450px);
+
+
+padding:
+
+clamp(25px,6vw,50px);
+
+
+
+background:
+
+rgba(255,255,255,.18);
+
+
+backdrop-filter:blur(25px);
+
+
+border-radius:35px;
+
+
+text-align:center;
 
 
 box-shadow:
 
-0 20px 60px rgba(0,0,0,.4);
+0 30px 80px rgba(0,0,0,.5);
+
+
+animation:
+
+cardShow 1.2s ease;
 
 
 }
+
+
+
+@keyframes cardShow{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(80px)
+scale(.7);
+
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+scale(1);
+
+
+}
+
+
+}
+
 
 
 
 .lock{
 
-font-size:90px;
 
-animation:beat 1.5s infinite;
+font-size:
+
+clamp(70px,15vw,110px);
+
+
+animation:lockMove 2s infinite;
+
 
 }
 
 
 
-@keyframes beat{
+@keyframes lockMove{
 
 
 50%{
 
-transform:scale(1.2);
+transform:
+
+translateY(-15px)
+rotate(5deg);
+
 
 }
 
 
 }
+
 
 
 
@@ -117,18 +403,29 @@ h1{
 
 font-family:'Great Vibes';
 
-font-size:65px;
+
+font-size:
+
+clamp(45px,10vw,75px);
+
+
+margin:20px 0;
 
 
 }
 
 
 
-p{
+.message{
 
-margin:20px;
 
-font-size:18px;
+font-size:
+
+clamp(14px,4vw,19px);
+
+
+line-height:1.6;
+
 
 }
 
@@ -138,10 +435,13 @@ font-size:18px;
 input{
 
 
+margin-top:20px;
+
+
 width:100%;
 
 
-padding:15px;
+padding:16px;
 
 
 border:none;
@@ -150,26 +450,48 @@ border:none;
 border-radius:50px;
 
 
+font-size:16px;
+
+
 text-align:center;
 
 
-font-size:18px;
-
-
 outline:none;
+
+
+transition:.4s;
 
 
 }
 
 
 
+input:focus{
+
+
+transform:scale(1.05);
+
+
+box-shadow:
+
+0 0 25px white;
+
+
+}
+
+
+
+
+
 button{
 
 
-margin-top:20px;
+margin-top:25px;
 
 
-padding:15px 40px;
+padding:
+
+15px clamp(30px,8vw,50px);
 
 
 border:none;
@@ -193,6 +515,24 @@ font-weight:bold;
 cursor:pointer;
 
 
+animation:pulse 2s infinite;
+
+
+}
+
+
+
+@keyframes pulse{
+
+
+50%{
+
+transform:scale(1.08);
+
+
+}
+
+
 }
 
 
@@ -201,12 +541,15 @@ cursor:pointer;
 #error{
 
 
-margin-top:15px;
-
-color:#fff;
+margin-top:20px;
 
 }
 
+
+
+/* ===================
+HEART PARTICLES
+=================== */
 
 
 .heart{
@@ -214,32 +557,99 @@ color:#fff;
 
 position:absolute;
 
+
 bottom:-50px;
 
 
-font-size:30px;
+font-size:
+
+clamp(20px,5vw,35px);
 
 
-animation:float 8s linear infinite;
+animation:
+
+rise linear infinite;
+
+
+}
+
+
+
+@keyframes rise{
+
+
+0%{
+
+
+transform:
+
+translateY(0)
+rotate(0);
+
+
+opacity:1;
 
 
 }
 
 
 
-@keyframes float{
+100%{
 
 
-to{
+transform:
 
-transform:translateY(-120vh);
+translateY(-120vh)
+rotate(360deg);
+
+
+opacity:0;
+
+
+}
+
+
+
+}
+
+
+
+/* Mobile */
+
+
+@media(max-width:480px){
+
+
+.box{
+
+
+border-radius:25px;
+
+
+}
+
+
+
+.loader-title{
+
+
+padding:0 20px;
+
+
+}
+
+
+
+button{
+
+
+font-size:16px;
 
 
 }
 
 
 }
-
 
 
 </style>
@@ -253,7 +663,51 @@ transform:translateY(-120vh);
 
 
 
-<div class="box">
+
+<!-- LOADING -->
+
+<div id="loader">
+
+
+<div class="loader-heart">
+
+❤️
+
+</div>
+
+
+<div class="loader-title">
+
+Preparing Your Surprise Anu...
+
+</div>
+
+
+<div class="loader-subtitle">
+
+Made with love by Shreyash ❤️
+
+</div>
+
+
+<div class="loading-bar">
+
+<div class="progress"></div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- PASSWORD -->
+
+
+<div class="box" id="login">
 
 
 <div class="lock">
@@ -266,17 +720,17 @@ transform:translateY(-120vh);
 
 <h1>
 
-For Anu ❤️
+Only For Anu
 
 </h1>
 
 
 
-<p>
+<div class="message">
 
-This little world is only for you...
+A special world created only for you ❤️
 
-</p>
+</div>
 
 
 
@@ -287,7 +741,9 @@ type="password"
 
 id="password"
 
-placeholder="Enter Secret Password ❤️"
+placeholder="Enter Secret Password"
+
+
 
 >
 
@@ -300,7 +756,6 @@ Open My Heart 💕
 </button>
 
 
-
 <div id="error"></div>
 
 
@@ -311,21 +766,51 @@ Open My Heart 💕
 
 
 
+
 <script>
+
+
+// Loader
+
+
+setTimeout(()=>{
+
+
+document.getElementById("loader").style.display="none";
+
+
+document.getElementById("login").style.display="block";
+
+
+},3000);
+
+
+
+
+
+// Password
 
 
 function unlock(){
 
 
-let pass =
-document.getElementById("password").value;
+let pass=document.getElementById("password").value;
 
 
 
 if(pass==="anu123"){
 
 
+document.body.style.opacity="0";
+
+
+setTimeout(()=>{
+
+
 window.location.href="home.html";
+
+
+},700);
 
 
 }
@@ -335,7 +820,7 @@ else{
 
 document.getElementById("error").innerHTML=
 
-"Wrong password 💔 Try again";
+"💔 Wrong Password";
 
 
 }
@@ -347,7 +832,8 @@ document.getElementById("error").innerHTML=
 
 
 
-// floating hearts
+
+// Hearts
 
 
 setInterval(()=>{
@@ -359,15 +845,21 @@ let h=document.createElement("div");
 h.className="heart";
 
 
-h.innerHTML="❤️";
+h.innerHTML=
+
+["❤️","💕","💖","🌹","✨"]
+[Math.floor(Math.random()*5)];
+
 
 
 h.style.left=Math.random()*100+"%";
 
 
+
 h.style.animationDuration=
 
-(5+Math.random()*5)+"s";
+(5+Math.random()*6)+"s";
+
 
 
 document.body.appendChild(h);
@@ -376,13 +868,15 @@ document.body.appendChild(h);
 
 setTimeout(()=>{
 
+
 h.remove();
 
-},10000);
+
+},12000);
 
 
 
-},500);
+},400);
 
 
 
