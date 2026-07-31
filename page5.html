@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Apology Letter ❤️</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+min-height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+font-family:Poppins,sans-serif;
+
+
+background:
+
+linear-gradient(
+135deg,
+#3a1c2f,
+#8e5a6a,
+#f7c8d0
+);
+
+
+}
+
+
+/* Rose petals */
+
+
+.petal{
+
+position:absolute;
+
+top:-50px;
+
+font-size:25px;
+
+animation:fall linear infinite;
+
+}
+
+
+@keyframes fall{
+
+
+to{
+
+transform:
+
+translateY(110vh)
+rotate(360deg);
+
+
+}
+
+
+}
+
+
+
+/* Letter */
+
+
+.paper{
+
+
+width:90%;
+
+max-width:850px;
+
+
+height:80vh;
+
+
+background:#fff8ef;
+
+
+padding:50px;
+
+
+border-radius:20px;
+
+
+box-shadow:
+
+0 30px 70px rgba(0,0,0,.5);
+
+
+overflow-y:auto;
+
+
+animation:
+
+openPaper 2s;
+
+
+}
+
+
+
+@keyframes openPaper{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+scale(.5)
+rotateX(60deg);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+scale(1)
+rotateX(0);
+
+}
+
+
+}
+
+
+
+h1{
+
+
+font-family:'Great Vibes';
+
+font-size:80px;
+
+
+text-align:center;
+
+
+color:#d6336c;
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+.letter{
+
+
+font-family:'Caveat',cursive;
+
+
+font-size:28px;
+
+
+line-height:1.8;
+
+
+color:#4a2633;
+
+
+}
+
+
+
+
+.signature{
+
+
+margin-top:40px;
+
+
+font-family:'Great Vibes';
+
+
+font-size:60px;
+
+
+color:#d6336c;
+
+
+text-align:right;
+
+
+}
+
+
+
+button{
+
+
+display:block;
+
+margin:40px auto 0;
+
+
+padding:16px 45px;
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:#d6336c;
+
+
+color:white;
+
+
+font-size:18px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<script>
+
+
+for(let i=0;i<40;i++){
+
+
+let petal=document.createElement("div");
+
+
+petal.className="petal";
+
+
+petal.innerHTML="🌹";
+
+
+petal.style.left=Math.random()*100+"%";
+
+
+petal.style.animationDuration=
+(5+Math.random()*6)+"s";
+
+
+document.body.appendChild(petal);
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+<div class="paper">
+
+
+<h1>
+
+My Apology
+
+</h1>
+
+
+
+<div class="letter">
+
+
+Dear Anu ❤️
+
+<br><br>
+
+
+I don't know if words are enough to express how sorry I am.
+
+<br><br>
+
+
+The last few days with you were truly special.
+
+Those moments, those smiles, those conversations...
+
+I will always keep them close to my heart.
+
+<br><br>
+
+
+But I also understand that my actions hurt you.
+
+Sending those reels was a mistake.
+
+I should have thought about your feelings and protected your trust.
+
+<br><br>
+
+
+I know you were hurt because you care about us.
+
+And seeing you cry because of something I did is something I regret deeply.
+
+<br><br>
+
+
+I am not writing this to force you to forget.
+
+I know trust takes time.
+
+I only want to show you that I understand my mistake.
+
+<br><br>
+
+
+I promise to be more thoughtful.
+
+I promise to respect your feelings.
+
+I promise to value the beautiful relationship we have.
+
+<br><br>
+
+
+Thank you for every smile.
+
+Thank you for every memory.
+
+Thank you for being a beautiful part of my life.
+
+<br><br>
+
+
+I am truly sorry, Anu.
+
+❤️
+
+
+</div>
+
+
+
+
+<div class="signature">
+
+Shreyash
+
+</div>
+
+
+
+
+<button onclick="nextPage()">
+
+Our Memories 📸
+
+</button>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function nextPage(){
+
+window.location.href="page6.html";
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
