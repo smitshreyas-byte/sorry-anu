@@ -9,70 +9,175 @@
 <title>For Anu ❤️</title>
 
 
-<link rel="stylesheet" href="style.css">
-
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 
 <style>
 
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
 body{
+
+
+min-height:100vh;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+font-family:Poppins,sans-serif;
+
+
+overflow:hidden;
+
+
+color:white;
+
+
 
 background:
 
 linear-gradient(
 135deg,
+#ff416c,
+#ff4b2b,
 #ff758c,
-#ff7eb3,
-#ffd1dc
+#ff7eb3
 );
+
+
+background-size:400% 400%;
+
+
+animation:bg 12s infinite alternate;
+
 
 }
 
 
 
-.profile{
+@keyframes bg{
+
+
+100%{
+
+background-position:right;
+
+}
+
+
+}
+
+
+
+
+/* Main Card */
+
+
+.card{
+
+
+width:min(90%,900px);
+
+
+padding:40px;
+
 
 text-align:center;
 
-}
+
+
+background:
+
+rgba(255,255,255,.15);
 
 
 
-.profile img{
+backdrop-filter:blur(20px);
 
 
-width:180px;
 
-height:180px;
+border-radius:35px;
 
-border-radius:50%;
-
-
-object-fit:cover;
-
-
-border:6px solid white;
 
 
 box-shadow:
 
-0 0 40px rgba(255,255,255,.8);
+0 30px 80px rgba(0,0,0,.5);
+
+
+
+animation:
+
+show 1.5s ease;
+
 
 
 }
 
 
 
-.title{
+@keyframes show{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(80px)
+scale(.7);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+scale(1);
+
+}
+
+
+}
+
+
+
+
+
+h1{
 
 
 font-family:'Great Vibes';
 
-font-size:55px;
 
-margin-top:20px;
+font-size:
+
+clamp(55px,10vw,100px);
+
+
+
+text-shadow:
+
+0 0 30px white;
+
 
 
 }
@@ -82,7 +187,11 @@ margin-top:20px;
 .names{
 
 
-font-size:25px;
+font-size:
+
+clamp(22px,5vw,40px);
+
+
 
 margin:15px;
 
@@ -94,27 +203,111 @@ margin:15px;
 .heart{
 
 
-font-size:80px;
+font-size:45px;
 
-animation:heartbeat 1s infinite;
+
+animation:
+
+beat 1s infinite;
 
 
 }
 
 
 
-@keyframes heartbeat{
+@keyframes beat{
 
 
 50%{
 
-transform:scale(1.2);
+transform:scale(1.3);
+
+
+}
+
+
+}
+
+
+
+
+
+/* Photo */
+
+
+.photo{
+
+
+margin:30px auto;
+
+
+width:
+
+clamp(180px,40vw,300px);
+
+
+height:
+
+clamp(180px,40vw,300px);
+
+
+border-radius:50%;
+
+
+overflow:hidden;
+
+
+
+border:
+
+8px solid white;
+
+
+
+box-shadow:
+
+0 0 40px white;
+
+
+
+animation:
+
+photoFloat 4s infinite;
+
+
+
+}
+
+
+
+.photo img{
+
+
+width:100%;
+
+
+height:100%;
+
+
+object-fit:cover;
+
+
+}
+
+
+
+
+@keyframes photoFloat{
+
+
+50%{
+
+transform:translateY(-15px);
 
 }
 
 
 }
-
 
 
 
@@ -122,9 +315,53 @@ transform:scale(1.2);
 .message{
 
 
+font-size:
+
+clamp(15px,3vw,22px);
+
+
 line-height:1.8;
 
-font-size:17px;
+
+}
+
+
+
+button{
+
+
+margin-top:35px;
+
+
+padding:
+
+16px 45px;
+
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:white;
+
+
+color:#ff416c;
+
+
+font-size:18px;
+
+
+font-weight:bold;
+
+
+cursor:pointer;
+
+
+
+animation:pulse 2s infinite;
 
 
 }
@@ -132,32 +369,109 @@ font-size:17px;
 
 
 
-.music-btn{
+@keyframes pulse{
+
+
+50%{
+
+transform:scale(1.1);
+
+}
+
+
+}
+
+
+
+
+
+.music{
+
+
+position:fixed;
+
+
+top:20px;
+
+
+right:20px;
+
+
+}
+
+
+
+.music button{
+
+
+margin:0;
+
+
+padding:12px 20px;
+
+
+font-size:14px;
+
+
+}
+
+
+
+
+/* Hearts */
+
+
+.floating{
 
 
 position:absolute;
 
 
-right:20px;
-
-top:20px;
+bottom:-50px;
 
 
-background:white;
+font-size:30px;
 
 
-border:none;
+animation:rise linear infinite;
 
 
-border-radius:50%;
+}
 
 
-width:45px;
 
-height:45px;
+@keyframes rise{
 
 
-font-size:22px;
+100%{
+
+
+transform:
+
+translateY(-120vh)
+rotate(360deg);
+
+
+opacity:0;
+
+
+}
+
+
+
+}
+
+
+
+
+@media(max-width:500px){
+
+
+.card{
+
+padding:25px;
+
+}
 
 
 }
@@ -166,7 +480,6 @@ font-size:22px;
 
 </style>
 
-
 </head>
 
 
@@ -174,21 +487,26 @@ font-size:22px;
 
 
 
-<div class="app">
+
+<!-- Music -->
+
+
+<audio id="music" loop>
+
+
+<source src="music/song.mp3" type="audio/mp3">
+
+
+</audio>
 
 
 
-<!-- HEADER -->
-
-<div class="header">
+<div class="music">
 
 
-For Anu ❤️
+<button onclick="playMusic()">
 
-
-<button class="music-btn">
-
-🎵
+🎵 Music
 
 </button>
 
@@ -199,18 +517,8 @@ For Anu ❤️
 
 
 
-<!-- CONTENT -->
 
-<div class="screen fade">
-
-
-<div class="app-card profile">
-
-
-
-<!-- Replace with your photo -->
-
-<img src="images/couple.jpg">
+<div class="card">
 
 
 
@@ -222,17 +530,31 @@ For Anu ❤️
 
 
 
-<div class="title">
+<h1>
 
-A Little Surprise
+Our Little World
 
-</div>
+</h1>
+
 
 
 
 <div class="names">
 
+
 Shreyash ❤️ Anu
+
+
+</div>
+
+
+
+
+<div class="photo">
+
+
+<img src="images/couple.jpg">
+
 
 </div>
 
@@ -242,37 +564,37 @@ Shreyash ❤️ Anu
 <div class="message">
 
 
-I created this little world
+I created this little journey
 
 because you are special to me.
 
 
+<br>
+
+
+I know I made a mistake...
+
+but my heart wants to say
+
+one thing:
+
+
 <br><br>
 
 
-I know I made a mistake,
+<strong>
 
-but my heart wants to say something...
+I am truly sorry, Anu ❤️
 
-
-<br><br>
-
-
-Please walk through this journey
-
-and feel what I couldn't express in words.
-
-
-❤️
+</strong>
 
 
 </div>
 
 
 
-<button class="app-btn"
 
-onclick="nextPage()">
+<button onclick="nextPage()">
 
 
 Open My Heart 💌
@@ -285,51 +607,6 @@ Open My Heart 💌
 </div>
 
 
-
-</div>
-
-
-
-
-
-<!-- BOTTOM NAV -->
-
-<div class="bottom-nav">
-
-
-<div class="nav-item">
-
-🏠
-
-</div>
-
-
-<div class="nav-item" onclick="nextPage()">
-
-💌
-
-</div>
-
-
-<div class="nav-item">
-
-📸
-
-</div>
-
-
-<div class="nav-item">
-
-❤️
-
-</div>
-
-
-</div>
-
-
-
-</div>
 
 
 
@@ -349,8 +626,21 @@ window.location.href="page2.html";
 
 
 
+function playMusic(){
 
-// floating hearts
+
+let music=document.getElementById("music");
+
+
+music.play();
+
+
+}
+
+
+
+
+// Floating hearts
 
 
 setInterval(()=>{
@@ -359,22 +649,24 @@ setInterval(()=>{
 let h=document.createElement("div");
 
 
-h.innerHTML="❤️";
+h.className="floating";
 
 
-h.style.position="fixed";
+h.innerHTML=
 
+["❤️","💕","🌹","💖","✨"]
+[Math.floor(Math.random()*5)];
 
-h.style.bottom="-50px";
 
 
 h.style.left=Math.random()*100+"%";
 
 
-h.style.fontSize="30px";
 
+h.style.animationDuration=
 
-h.style.animation="float 8s linear";
+(5+Math.random()*6)+"s";
+
 
 
 document.body.appendChild(h);
@@ -387,11 +679,11 @@ setTimeout(()=>{
 h.remove();
 
 
-},8000);
+},12000);
 
 
 
-},600);
+},400);
 
 
 
