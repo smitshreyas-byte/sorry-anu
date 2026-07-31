@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter For Anu ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+height:100vh;
+
+overflow:hidden;
+
+font-family:Poppins,sans-serif;
+
+background:
+linear-gradient(135deg,#8e0e00,#ff6a88,#ffb199);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+}
+
+
+/* Envelope */
+
+.envelope{
+
+width:300px;
+
+height:200px;
+
+background:#fff;
+
+position:relative;
+
+border-radius:10px;
+
+cursor:pointer;
+
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+animation:float 3s infinite;
+
+}
+
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+
+/* Envelope flap */
+
+.flap{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:0;
+
+height:0;
+
+border-left:150px solid transparent;
+
+border-right:150px solid transparent;
+
+border-top:100px solid #ff4d6d;
+
+transform-origin:top;
+
+transition:1s;
+
+}
+
+
+
+.envelope.open .flap{
+
+transform:rotateX(180deg);
+
+}
+
+
+/* Letter */
+
+.letter{
+
+position:absolute;
+
+width:85%;
+
+height:85%;
+
+background:white;
+
+color:#444;
+
+left:7.5%;
+
+top:15%;
+
+padding:20px;
+
+border-radius:8px;
+
+opacity:0;
+
+transform:translateY(50px);
+
+transition:1s;
+
+overflow:auto;
+
+}
+
+
+.envelope.open .letter{
+
+opacity:1;
+
+transform:translateY(-130px);
+
+}
+
+
+
+h1{
+
+font-family:'Great Vibes';
+
+font-size:50px;
+
+color:#ff416c;
+
+text-align:center;
+
+}
+
+
+p{
+
+line-height:1.7;
+
+font-size:15px;
+
+margin-top:15px;
+
+}
+
+
+
+.next{
+
+margin-top:170px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:#ff416c;
+
+font-weight:bold;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+animation:heart 8s linear infinite;
+
+}
+
+
+
+@keyframes heart{
+
+
+0%{
+
+transform:translateY(100vh);
+
+}
+
+
+100%{
+
+transform:translateY(-100px);
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="heart" style="left:10%">❤️</div>
+<div class="heart" style="left:40%">💕</div>
+<div class="heart" style="left:80%">💖</div>
+
+
+
+<div>
+
+
+<div class="envelope" onclick="openLetter()">
+
+
+<div class="flap"></div>
+
+
+<div class="letter">
+
+
+<h1>
+Dear Anu ❤️
+</h1>
+
+
+<p>
+
+I wanted to create this little space
+because words sometimes fail me.
+
+I know I hurt you.
+
+I know seeing those things made you feel
+sad and disappointed.
+
+You spent those beautiful three days with me,
+giving me your love and your time.
+
+Instead of protecting your feelings,
+I ended up hurting you.
+
+I am truly sorry.
+
+Please open my heart and read my feelings.
+
+❤️
+
+<br><br>
+
+- Shreyash
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<button class="next" onclick="goNext()">
+
+Continue 💕
+
+</button>
+
+
+</div>
+
+
+
+<script>
+
+
+function openLetter(){
+
+document.querySelector(".envelope")
+.classList.add("open");
+
+}
+
+
+
+function goNext(){
+
+window.location.href="page3.html";
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
