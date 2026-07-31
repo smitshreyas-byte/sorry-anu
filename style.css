@@ -1,10 +1,8 @@
-/* ===================================
-   SORRY FOR ANU - COMMON STYLE CSS
+/* =====================================
+   NATURAL ROMANTIC THEME
    Shreyash ❤️ Anu
-=================================== */
+===================================== */
 
-
-/* RESET */
 
 *{
     margin:0;
@@ -17,8 +15,6 @@ html{
 
     scroll-behavior:smooth;
 
-    font-size:16px;
-
 }
 
 
@@ -27,123 +23,73 @@ body{
 
     min-height:100vh;
 
-    width:100%;
-
-    font-family:'Poppins',sans-serif;
-
     overflow-x:hidden;
 
     overflow-y:auto;
 
+    font-family:'Poppins',sans-serif;
+
     color:white;
 
-}
-
-
-
-/* ===================================
-   BACKGROUND
-=================================== */
-
-
-.romantic-bg{
 
     background:
 
     linear-gradient(
         135deg,
-        #ff416c,
-        #ff4b2b,
-        #ff758c,
-        #ff7eb3
+        #8b1e3f,
+        #d85a7f,
+        #f7b2bd
     );
 
 
-    background-size:400% 400%;
-
-    animation:bgMove 12s infinite alternate;
-
 }
 
 
 
-@keyframes bgMove{
-
-    0%{
-        background-position:left;
-    }
+/* Soft moving background */
 
 
-    100%{
-        background-position:right;
-    }
+body::before{
 
-}
+content:"";
 
+position:fixed;
 
-
-/* ===================================
-   MAIN CONTAINER
-=================================== */
+inset:0;
 
 
-.container{
+background:
+
+radial-gradient(
+circle at top,
+rgba(255,255,255,.25),
+transparent 40%
+);
 
 
-    width:min(92%,1000px);
-
-    min-height:auto;
-
-    margin:40px auto;
+pointer-events:none;
 
 
-    padding:clamp(20px,5vw,50px);
-
-
-    background:
-
-    rgba(255,255,255,0.15);
-
-
-    backdrop-filter:blur(20px);
-
-
-    -webkit-backdrop-filter:blur(20px);
-
-
-    border-radius:35px;
-
-
-    box-shadow:
-
-    0 25px 70px rgba(0,0,0,.35);
-
-
-    animation:pageEnter 1s ease;
+animation:softLight 8s infinite alternate;
 
 
 }
 
 
 
-
-@keyframes pageEnter{
+@keyframes softLight{
 
 
 from{
 
-    opacity:0;
-
-    transform:translateY(50px) scale(.9);
+opacity:.5;
 
 }
 
 
 to{
 
-    opacity:1;
-
-    transform:translateY(0) scale(1);
+opacity:1;
 
 }
 
@@ -152,9 +98,90 @@ to{
 
 
 
-/* ===================================
-   HEADINGS
-=================================== */
+
+
+/* Main Glass Card */
+
+
+.container,
+.card,
+.box{
+
+
+width:min(92%,950px);
+
+
+margin:40px auto;
+
+
+padding:
+
+clamp(20px,5vw,50px);
+
+
+
+background:
+
+rgba(255,255,255,.13);
+
+
+
+backdrop-filter:blur(18px);
+
+
+-webkit-backdrop-filter:blur(18px);
+
+
+
+border-radius:30px;
+
+
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.25);
+
+
+
+animation:
+
+fadeUp 1.2s ease;
+
+
+
+}
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+
+}
+
+
+}
+
+
+
+
+/* Headings */
 
 
 h1{
@@ -163,41 +190,53 @@ h1{
 font-family:'Great Vibes',cursive;
 
 
-font-size:clamp(45px,10vw,100px);
+font-size:
+
+clamp(45px,10vw,95px);
+
+
+
+font-weight:400;
+
 
 
 text-align:center;
 
 
-text-shadow:
-
-0 0 25px rgba(255,255,255,.8);
-
 
 }
+
 
 
 
 h2{
 
 
-font-size:clamp(22px,5vw,40px);
+font-weight:500;
+
+
+}
+
+
+
+
+
+.message,
+p{
+
+
+font-size:
+
+clamp(15px,3vw,21px);
+
+
+
+line-height:1.9;
+
+
 
 text-align:center;
 
-}
-
-
-
-p,
-.message{
-
-
-font-size:clamp(15px,3vw,22px);
-
-
-line-height:1.8;
-
 
 }
 
@@ -205,25 +244,7 @@ line-height:1.8;
 
 
 
-/* ===================================
-   IMAGES
-=================================== */
-
-
-img{
-
-
-max-width:100%;
-
-
-height:auto;
-
-
-display:block;
-
-
-}
-
+/* Image */
 
 
 .photo{
@@ -231,15 +252,16 @@ display:block;
 
 width:
 
-clamp(180px,40vw,320px);
+clamp(180px,35vw,300px);
 
 
 height:
 
-clamp(180px,40vw,320px);
+clamp(180px,35vw,300px);
 
 
 margin:30px auto;
+
 
 
 border-radius:50%;
@@ -248,15 +270,19 @@ border-radius:50%;
 overflow:hidden;
 
 
-border:8px solid white;
+border:5px solid rgba(255,255,255,.8);
+
 
 
 box-shadow:
 
-0 0 40px white;
+0 10px 40px rgba(0,0,0,.3);
 
 
-animation:photoFloat 4s infinite;
+
+animation:
+
+slowFloat 5s ease-in-out infinite;
 
 
 }
@@ -277,23 +303,65 @@ object-fit:cover;
 
 
 
-@keyframes photoFloat{
+@keyframes slowFloat{
 
 
 50%{
 
-transform:translateY(-15px);
+transform:translateY(-10px);
 
 }
 
+
 }
 
 
 
 
-/* ===================================
-   BUTTONS
-=================================== */
+/* Heartbeat */
+
+
+.heart{
+
+
+font-size:70px;
+
+
+animation:
+
+softBeat 2s infinite;
+
+
+}
+
+
+
+@keyframes softBeat{
+
+
+0%,100%{
+
+transform:scale(1);
+
+
+}
+
+
+50%{
+
+transform:scale(1.15);
+
+
+}
+
+
+}
+
+
+
+
+
+/* Buttons */
 
 
 button{
@@ -302,72 +370,53 @@ button{
 border:none;
 
 
-outline:none;
+padding:
+
+15px 40px;
+
+
+border-radius:40px;
+
+
+
+background:
+
+rgba(255,255,255,.95);
+
+
+
+color:#b52b50;
+
+
+
+font-size:17px;
+
+
+font-weight:600;
+
 
 
 cursor:pointer;
 
 
-padding:
-
-15px clamp(25px,6vw,50px);
-
-
-border-radius:50px;
-
-
-background:white;
-
-
-color:#ff416c;
-
-
-font-size:18px;
-
-
-font-weight:bold;
-
-
-margin:25px auto;
-
-
-display:block;
-
 
 transition:.4s;
 
 
-animation:pulse 2s infinite;
-
 
 }
-
 
 
 
 button:hover{
 
 
-transform:scale(1.1);
+transform:translateY(-5px);
 
 
 box-shadow:
 
-0 0 30px white;
-
-
-}
-
-
-
-@keyframes pulse{
-
-
-50%{
-
-transform:scale(1.08);
-
-}
+0 15px 30px rgba(0,0,0,.25);
 
 
 }
@@ -375,74 +424,7 @@ transform:scale(1.08);
 
 
 
-/* ===================================
-   FLOATING HEARTS
-=================================== */
-
-
-.heart,
-.floating{
-
-
-position:fixed;
-
-
-bottom:-60px;
-
-
-font-size:30px;
-
-
-pointer-events:none;
-
-
-z-index:1;
-
-
-animation:floatHeart linear infinite;
-
-
-}
-
-
-
-@keyframes floatHeart{
-
-
-0%{
-
-transform:
-
-translateY(0)
-rotate(0);
-
-
-opacity:1;
-
-
-}
-
-
-100%{
-
-transform:
-
-translateY(-120vh)
-rotate(360deg);
-
-
-opacity:0;
-
-
-}
-
-}
-
-
-
-/* ===================================
-   ROSE PETALS
-=================================== */
+/* Natural Rose Petals */
 
 
 .petal{
@@ -457,10 +439,16 @@ top:-50px;
 font-size:25px;
 
 
+opacity:.8;
+
+
 pointer-events:none;
 
 
-animation:petalFall linear infinite;
+
+animation:
+
+petalFall linear infinite;
 
 
 }
@@ -470,11 +458,39 @@ animation:petalFall linear infinite;
 @keyframes petalFall{
 
 
-to{
+0%{
+
 
 transform:
 
-translateY(120vh)
+translateY(-10vh)
+translateX(0)
+rotate(0deg);
+
+
+}
+
+
+50%{
+
+
+transform:
+
+translateX(40px)
+rotate(180deg);
+
+
+}
+
+
+
+100%{
+
+
+transform:
+
+translateY(110vh)
+translateX(-40px)
 rotate(360deg);
 
 
@@ -486,9 +502,64 @@ rotate(360deg);
 
 
 
-/* ===================================
-   AUDIO BUTTON
-=================================== */
+
+/* Small floating lights */
+
+
+.sparkle{
+
+
+position:fixed;
+
+
+width:6px;
+
+
+height:6px;
+
+
+background:white;
+
+
+border-radius:50%;
+
+
+opacity:.6;
+
+
+animation:
+
+sparkleMove 5s infinite;
+
+
+}
+
+
+
+@keyframes sparkleMove{
+
+
+50%{
+
+
+transform:
+
+translateY(-40px);
+
+
+opacity:1;
+
+
+}
+
+
+}
+
+
+
+
+
+/* Music button */
 
 
 .music-btn{
@@ -503,22 +574,20 @@ top:20px;
 right:20px;
 
 
-z-index:20;
+z-index:10;
 
 
 }
+
 
 
 .music-btn button{
 
 
-padding:12px 20px;
-
-
 font-size:14px;
 
 
-margin:0;
+padding:12px 20px;
 
 
 }
@@ -526,39 +595,31 @@ margin:0;
 
 
 
-
-/* ===================================
-   MOBILE RESPONSIVE
-=================================== */
+/* Mobile */
 
 
 @media(max-width:768px){
 
 
-
-.container{
-
-
-width:94%;
+.container,
+.card,
+.box{
 
 
-margin:25px auto;
+margin:20px auto;
 
 
 padding:25px 18px;
-
-
-border-radius:25px;
 
 
 }
 
 
 
-h1{
+button{
 
 
-font-size:clamp(45px,14vw,70px);
+width:85%;
 
 
 }
@@ -572,40 +633,11 @@ p{
 font-size:16px;
 
 
-line-height:1.7;
-
-
-}
-
-
-
-button{
-
-
-width:90%;
-
-
-font-size:16px;
-
-
-}
-
-
-
-.photo{
-
-
-width:220px;
-
-height:220px;
-
-
 }
 
 
 
 }
-
 
 
 
@@ -613,75 +645,20 @@ height:220px;
 @media(max-width:480px){
 
 
+h1{
 
-body{
-
-
-font-size:14px;
-
+font-size:55px;
 
 }
-
-
-
-.container{
-
-
-padding:20px 15px;
-
-
-}
-
 
 
 .photo{
-
 
 width:180px;
 
 height:180px;
 
-
 }
-
-
-
-button{
-
-
-padding:14px;
-
-
-}
-
-
-
-}
-
-
-
-/* ===================================
-   REMOVE MOBILE SCROLL LOCK
-=================================== */
-
-
-body,
-html{
-
-
-height:auto;
-
-
-min-height:100%;
-
-
-overflow-x:hidden;
-
-
-overflow-y:auto;
-
-
--webkit-overflow-scrolling:touch;
 
 
 }
