@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I Made A Mistake 💔</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+height:100vh;
+
+overflow:hidden;
+
+font-family:Poppins,sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#111,
+#3b0a16
+);
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+}
+
+
+
+/* Rain */
+
+.rain{
+
+position:absolute;
+
+width:2px;
+
+height:80px;
+
+background:rgba(255,255,255,.5);
+
+top:-100px;
+
+animation:rain linear infinite;
+
+}
+
+
+
+@keyframes rain{
+
+to{
+
+transform:translateY(120vh);
+
+}
+
+}
+
+
+
+/* Card */
+
+
+.container{
+
+width:90%;
+
+max-width:900px;
+
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+
+padding:50px;
+
+border-radius:30px;
+
+
+text-align:center;
+
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.5);
+
+
+z-index:5;
+
+
+}
+
+
+
+h1{
+
+
+font-family:'Great Vibes';
+
+font-size:85px;
+
+color:#ff6b81;
+
+
+}
+
+
+
+.broken{
+
+font-size:80px;
+
+animation:break 2s infinite;
+
+
+}
+
+
+
+@keyframes break{
+
+
+50%{
+
+transform:scale(1.2)
+rotate(-10deg);
+
+}
+
+
+}
+
+
+
+h2{
+
+font-size:35px;
+
+margin:20px;
+
+}
+
+
+
+.message{
+
+
+font-size:20px;
+
+line-height:2;
+
+min-height:220px;
+
+
+}
+
+
+
+button{
+
+
+margin-top:30px;
+
+
+padding:18px 50px;
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:#ff416c;
+
+
+color:white;
+
+
+font-size:18px;
+
+
+font-weight:bold;
+
+
+cursor:pointer;
+
+
+transition:.3s;
+
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 30px #ff416c;
+
+}
+
+
+
+/* Hearts */
+
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+animation:float 8s linear infinite;
+
+
+}
+
+
+
+@keyframes float{
+
+
+from{
+
+transform:translateY(100vh);
+
+}
+
+
+to{
+
+transform:translateY(-100px);
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- Rain -->
+
+<script>
+
+for(let i=0;i<120;i++){
+
+let r=document.createElement("div");
+
+r.className="rain";
+
+r.style.left=Math.random()*100+"%";
+
+r.style.animationDuration=
+(0.5+Math.random()*1.5)+"s";
+
+r.style.animationDelay=
+Math.random()*5+"s";
+
+
+document.body.appendChild(r);
+
+}
+
+
+
+for(let i=0;i<20;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="💔";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(h);
+
+}
+
+
+</script>
+
+
+
+
+<div class="container">
+
+
+<div class="broken">
+
+💔
+
+</div>
+
+
+
+<h1>
+
+I Made A Mistake
+
+</h1>
+
+
+<h2>
+
+Anu, I'm Sorry...
+
+</h2>
+
+
+
+<div class="message" id="text">
+
+
+</div>
+
+
+
+
+<button onclick="nextPage()">
+
+Read My Heart ❤️
+
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+
+const words=`
+
+I know what I did hurt you.
+
+Sending those reels to someone else was wrong.
+
+I understand that it was not just about a reel...
+
+It was about your trust.
+
+You spent three beautiful days with me.
+
+You gave me your time, love and happiness.
+
+But my careless action became the reason
+behind your tears.
+
+I don't want to give excuses.
+
+I only want to accept my mistake.
+
+I am truly sorry, Anu.
+
+`;
+
+
+
+let i=0;
+
+
+function typing(){
+
+
+if(i<words.length){
+
+
+document.getElementById("text").innerHTML+=
+words.charAt(i);
+
+
+i++;
+
+setTimeout(typing,45);
+
+
+}
+
+
+}
+
+
+typing();
+
+
+
+
+function nextPage(){
+
+window.location.href="page4.html";
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
