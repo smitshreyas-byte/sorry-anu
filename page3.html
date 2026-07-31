@@ -4,268 +4,155 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>I Made A Mistake 💔</title>
+
+<title>My Mistake 💔</title>
 
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 
 <style>
 
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-
 body{
 
-height:100vh;
-
-overflow:hidden;
-
-font-family:Poppins,sans-serif;
-
 background:
+
 linear-gradient(
-180deg,
-#111,
-#3b0a16
+135deg,
+#3a1c71,
+#d76d77,
+#ffaf7b
 );
 
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
 }
 
 
 
-/* Rain */
 
-.rain{
-
-position:absolute;
-
-width:2px;
-
-height:80px;
-
-background:rgba(255,255,255,.5);
-
-top:-100px;
-
-animation:rain linear infinite;
-
-}
+.broken-heart{
 
 
-
-@keyframes rain{
-
-to{
-
-transform:translateY(120vh);
-
-}
-
-}
+font-size:100px;
 
 
+animation:
 
-/* Card */
-
-
-.container{
-
-width:90%;
-
-max-width:900px;
-
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(15px);
-
-
-padding:50px;
-
-border-radius:30px;
-
-
-text-align:center;
-
-
-box-shadow:
-
-0 20px 60px rgba(0,0,0,.5);
-
-
-z-index:5;
+heartDrop 3s infinite;
 
 
 }
 
 
 
-h1{
+
+@keyframes heartDrop{
 
 
-font-family:'Great Vibes';
+0%{
 
-font-size:85px;
-
-color:#ff6b81;
-
+transform:translateY(0);
 
 }
-
-
-
-.broken{
-
-font-size:80px;
-
-animation:break 2s infinite;
-
-
-}
-
-
-
-@keyframes break{
 
 
 50%{
 
-transform:scale(1.2)
-rotate(-10deg);
-
-}
+transform:translateY(15px) rotate(-5deg);
 
 
 }
 
 
+100%{
 
-h2{
-
-font-size:35px;
-
-margin:20px;
-
-}
-
-
-
-.message{
-
-
-font-size:20px;
-
-line-height:2;
-
-min-height:220px;
+transform:translateY(0);
 
 
 }
 
 
 
-button{
+}
+
+
+
+
+.mistake-box{
 
 
 margin-top:30px;
 
 
-padding:18px 50px;
+padding:25px;
 
 
-border:none;
+border-left:
+
+4px solid rgba(255,255,255,.7);
 
 
-border-radius:50px;
+
+background:
+
+rgba(255,255,255,.08);
 
 
-background:#ff416c;
-
-
-color:white;
-
-
-font-size:18px;
-
-
-font-weight:bold;
-
-
-cursor:pointer;
-
-
-transition:.3s;
+border-radius:20px;
 
 
 }
 
 
 
-button:hover{
-
-transform:scale(1.1);
-
-box-shadow:0 0 30px #ff416c;
-
-}
+.fade-text{
 
 
+animation:
 
-/* Hearts */
-
-
-.heart{
-
-position:absolute;
-
-font-size:30px;
-
-animation:float 8s linear infinite;
+fadeText 2s ease;
 
 
 }
 
 
 
-@keyframes float{
+@keyframes fadeText{
 
 
 from{
 
-transform:translateY(100vh);
+opacity:0;
+
+transform:translateY(30px);
+
 
 }
 
 
 to{
 
-transform:translateY(-100px);
+opacity:1;
+
+transform:translateY(0);
+
 
 }
 
 
 }
+
 
 
 
 </style>
+
 
 </head>
 
@@ -275,59 +162,12 @@ transform:translateY(-100px);
 
 
 
-<!-- Rain -->
-
-<script>
-
-for(let i=0;i<120;i++){
-
-let r=document.createElement("div");
-
-r.className="rain";
-
-r.style.left=Math.random()*100+"%";
-
-r.style.animationDuration=
-(0.5+Math.random()*1.5)+"s";
-
-r.style.animationDelay=
-Math.random()*5+"s";
-
-
-document.body.appendChild(r);
-
-}
-
-
-
-for(let i=0;i<20;i++){
-
-let h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML="💔";
-
-h.style.left=Math.random()*100+"%";
-
-h.style.animationDuration=
-(5+Math.random()*5)+"s";
-
-
-document.body.appendChild(h);
-
-}
-
-
-</script>
-
-
-
 
 <div class="container">
 
 
-<div class="broken">
+
+<div class="broken-heart">
 
 💔
 
@@ -335,37 +175,113 @@ document.body.appendChild(h);
 
 
 
+
 <h1>
 
-I Made A Mistake
+My Mistake
 
 </h1>
 
 
-<h2>
-
-Anu, I'm Sorry...
-
-</h2>
 
 
 
-<div class="message" id="text">
+<div class="message fade-text">
+
+
+Anu...
+
+
+<br><br>
+
+
+I want to accept something honestly.
+
+
+<br><br>
+
+
+I made a mistake.
+
+Sending that reel to my female friend was wrong,
+
+and I understand why it hurt you.
 
 
 </div>
+
+
+
+
+
+<div class="mistake-box">
+
+
+
+<div class="message">
+
+
+You spent three beautiful days with me...
+
+You trusted me...
+
+You gave me your time and love.
+
+
+<br><br>
+
+
+And instead of protecting your feelings,
+
+I made you feel hurt.
+
+
+<br><br>
+
+
+I am truly sorry for my behaviour.
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="message">
+
+
+I don't want to make excuses.
+
+I only want to understand your pain
+
+and become better.
+
+
+</div>
+
 
 
 
 
 <button onclick="nextPage()">
 
-Read My Heart ❤️
+I Understand Your Pain 😢
 
 </button>
 
 
+
+
 </div>
+
+
+
+
 
 
 
@@ -373,67 +289,60 @@ Read My Heart ❤️
 <script>
 
 
-const words=`
-
-I know what I did hurt you.
-
-Sending those reels to someone else was wrong.
-
-I understand that it was not just about a reel...
-
-It was about your trust.
-
-You spent three beautiful days with me.
-
-You gave me your time, love and happiness.
-
-But my careless action became the reason
-behind your tears.
-
-I don't want to give excuses.
-
-I only want to accept my mistake.
-
-I am truly sorry, Anu.
-
-`;
-
-
-
-let i=0;
-
-
-function typing(){
-
-
-if(i<words.length){
-
-
-document.getElementById("text").innerHTML+=
-words.charAt(i);
-
-
-i++;
-
-setTimeout(typing,45);
-
-
-}
-
-
-}
-
-
-typing();
-
-
 
 
 function nextPage(){
 
+
 window.location.href="page4.html";
 
+
 }
+
+
+
+
+
+function createPetal(){
+
+
+let p=document.createElement("div");
+
+
+p.className="petal";
+
+
+p.innerHTML="🌹";
+
+
+p.style.left=Math.random()*100+"%";
+
+
+p.style.animationDuration=
+
+(9+Math.random()*8)+"s";
+
+
+document.body.appendChild(p);
+
+
+
+setTimeout(()=>{
+
+
+p.remove();
+
+
+},16000);
+
+
+}
+
+
+
+setInterval(createPetal,1000);
+
+
 
 
 </script>
