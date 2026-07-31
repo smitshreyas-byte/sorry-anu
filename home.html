@@ -8,11 +8,164 @@
 
 <title>For Anu ❤️</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- CSS File -->
 <link rel="stylesheet" href="style.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+body{
+
+background:
+
+linear-gradient(
+135deg,
+#ff758c,
+#ff7eb3,
+#ffd1dc
+);
+
+}
+
+
+
+.profile{
+
+text-align:center;
+
+}
+
+
+
+.profile img{
+
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+
+object-fit:cover;
+
+
+border:6px solid white;
+
+
+box-shadow:
+
+0 0 40px rgba(255,255,255,.8);
+
+
+}
+
+
+
+.title{
+
+
+font-family:'Great Vibes';
+
+font-size:55px;
+
+margin-top:20px;
+
+
+}
+
+
+
+.names{
+
+
+font-size:25px;
+
+margin:15px;
+
+
+}
+
+
+
+.heart{
+
+
+font-size:80px;
+
+animation:heartbeat 1s infinite;
+
+
+}
+
+
+
+@keyframes heartbeat{
+
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+
+}
+
+
+
+
+
+.message{
+
+
+line-height:1.8;
+
+font-size:17px;
+
+
+}
+
+
+
+
+.music-btn{
+
+
+position:absolute;
+
+
+right:20px;
+
+top:20px;
+
+
+background:white;
+
+
+border:none;
+
+
+border-radius:50%;
+
+
+width:45px;
+
+height:45px;
+
+
+font-size:22px;
+
+
+}
+
+
+
+</style>
+
 
 </head>
 
@@ -20,84 +173,231 @@
 <body>
 
 
-<!-- Background Effects -->
 
-<div id="hearts"></div>
-
-<div id="petals"></div>
-
-<div id="stars"></div>
+<div class="app">
 
 
-<!-- Music -->
 
-<audio id="music" loop>
+<!-- HEADER -->
 
-<source src="music/song.mp3" type="audio/mp3">
-
-</audio>
+<div class="header">
 
 
-<button class="music-btn" onclick="playMusic()">
+For Anu ❤️
+
+
+<button class="music-btn">
+
 🎵
+
 </button>
 
 
-
-<!-- Main Card -->
-
-<section class="welcome-card">
+</div>
 
 
-<div class="heart-beat">
+
+
+
+<!-- CONTENT -->
+
+<div class="screen fade">
+
+
+<div class="app-card profile">
+
+
+
+<!-- Replace with your photo -->
+
+<img src="images/couple.jpg">
+
+
+
+<div class="heart">
 
 ❤️
 
 </div>
 
 
-<h1>
-Dear Anu
-</h1>
+
+<div class="title">
+
+A Little Surprise
+
+</div>
 
 
-<h2>
-I Have Something From My Heart...
-</h2>
+
+<div class="names">
+
+Shreyash ❤️ Anu
+
+</div>
+
 
 
 
 <div class="message">
 
-<p id="typing">
 
-</p>
+I created this little world
+
+because you are special to me.
+
+
+<br><br>
+
+
+I know I made a mistake,
+
+but my heart wants to say something...
+
+
+<br><br>
+
+
+Please walk through this journey
+
+and feel what I couldn't express in words.
+
+
+❤️
+
 
 </div>
 
 
 
-<button class="open-btn" onclick="nextPage()">
+<button class="app-btn"
 
-💌 Open My Heart
+onclick="nextPage()">
+
+
+Open My Heart 💌
+
 
 </button>
 
 
 
-</section>
+</div>
 
 
-
-<!-- Page Transition -->
-
-<div id="transition">
 
 </div>
 
 
 
-<script src="script.js"></script>
+
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom-nav">
+
+
+<div class="nav-item">
+
+🏠
+
+</div>
+
+
+<div class="nav-item" onclick="nextPage()">
+
+💌
+
+</div>
+
+
+<div class="nav-item">
+
+📸
+
+</div>
+
+
+<div class="nav-item">
+
+❤️
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function nextPage(){
+
+
+window.location.href="page2.html";
+
+
+}
+
+
+
+
+
+// floating hearts
+
+
+setInterval(()=>{
+
+
+let h=document.createElement("div");
+
+
+h.innerHTML="❤️";
+
+
+h.style.position="fixed";
+
+
+h.style.bottom="-50px";
+
+
+h.style.left=Math.random()*100+"%";
+
+
+h.style.fontSize="30px";
+
+
+h.style.animation="float 8s linear";
+
+
+document.body.appendChild(h);
+
+
+
+setTimeout(()=>{
+
+
+h.remove();
+
+
+},8000);
+
+
+
+},600);
+
+
+
+</script>
+
+
 
 
 </body>
