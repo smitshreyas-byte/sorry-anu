@@ -1,183 +1,114 @@
-// =============================
-// TYPEWRITER MESSAGE
-// =============================
-
-const message = `Every word on this website comes from my heart...
-
-I know I hurt you.
-
-I know my actions made you feel bad.
-
-Those beautiful three days we spent together
-were special to me.
-
-Seeing tears in your eyes broke my heart.
-
-I am not here to make excuses.
-
-I just want to say...
-
-I am truly sorry, Anu ❤️`;
+/* =====================================
+   SORRY FOR ANU
+   COMMON JAVASCRIPT
+   Shreyash ❤️ Anu
+===================================== */
 
 
-let index = 0;
+
+// ===============================
+// PAGE FADE IN
+// ===============================
 
 
-function typeWriter(){
-
-    if(index < message.length){
-
-        document.getElementById("typing").innerHTML += 
-        message.charAt(index);
-
-        index++;
-
-        setTimeout(typeWriter,45);
-
-    }
-
-}
+document.addEventListener("DOMContentLoaded",()=>{
 
 
-typeWriter();
+document.body.style.opacity="0";
+
+
+setTimeout(()=>{
+
+document.body.style.transition="opacity 1.2s ease";
+
+document.body.style.opacity="1";
+
+
+},100);
+
+
+
+});
 
 
 
 
-// =============================
-// FLOATING HEARTS
-// =============================
+
+// ===============================
+// PAGE TRANSITION
+// ===============================
 
 
-function createHeart(){
-
-    const heart=document.createElement("div");
-
-    heart.className="heart";
+function goToPage(page){
 
 
-    const hearts=[
-        "❤️",
-        "💕",
-        "💖",
-        "💞",
-        "💗"
-    ];
+document.body.style.transition="opacity .8s ease";
 
 
-    heart.innerHTML =
-    hearts[Math.floor(Math.random()*hearts.length)];
+document.body.style.opacity="0";
 
 
-    heart.style.left =
-    Math.random()*100+"%";
+setTimeout(()=>{
 
 
-    heart.style.animationDuration =
-    (5+Math.random()*6)+"s";
+window.location.href=page;
 
 
-    heart.style.fontSize =
-    (20+Math.random()*30)+"px";
-
-
-    document.body.appendChild(heart);
-
-
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },12000);
+},800);
 
 
 }
 
 
 
-setInterval(createHeart,400);
 
 
 
-
-// =============================
+// ===============================
 // ROSE PETALS
-// =============================
+// ===============================
 
 
 function createPetal(){
 
 
-    const petal=document.createElement("div");
+let petal=document.createElement("div");
 
 
-    petal.className="petal";
+petal.className="petal";
 
 
-    petal.innerHTML="🌹";
-
-
-    petal.style.left =
-    Math.random()*100+"%";
-
-
-    petal.style.animationDuration =
-    (5+Math.random()*5)+"s";
-
-
-    petal.style.fontSize =
-    (15+Math.random()*20)+"px";
+petal.innerHTML="🌹";
 
 
 
-    document.body.appendChild(petal);
+petal.style.left=Math.random()*100+"vw";
 
 
 
-    setTimeout(()=>{
+petal.style.fontSize=
 
-        petal.remove();
-
-    },10000);
-
-
-}
+(15+Math.random()*20)+"px";
 
 
 
-setInterval(createPetal,500);
+petal.style.animationDuration=
+
+(8+Math.random()*8)+"s";
 
 
 
-
-// =============================
-// STAR EFFECT
-// =============================
+document.body.appendChild(petal);
 
 
-function createStar(){
+
+setTimeout(()=>{
 
 
-    const star=document.createElement("div");
+petal.remove();
 
 
-    star.className="star";
-
-
-    star.style.left =
-    Math.random()*100+"%";
-
-
-    star.style.top =
-    Math.random()*100+"%";
-
-
-    star.style.animationDelay =
-    Math.random()*2+"s";
-
-
-    document.body.appendChild(star);
+},16000);
 
 
 
@@ -185,57 +116,193 @@ function createStar(){
 
 
 
-for(let i=0;i<120;i++){
 
-    createStar();
+
+setInterval(createPetal,1200);
+
+
+
+
+
+
+
+// ===============================
+// FLOATING HEARTS
+// ===============================
+
+
+function createHeart(){
+
+
+let heart=document.createElement("div");
+
+
+heart.className="heart";
+
+
+heart.innerHTML=
+
+["❤️","💕","💖","✨"]
+[Math.floor(Math.random()*4)];
+
+
+
+heart.style.left=Math.random()*100+"vw";
+
+
+
+heart.style.animationDuration=
+
+(7+Math.random()*8)+"s";
+
+
+
+document.body.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+
+heart.remove();
+
+
+},15000);
+
+
+}
+
+
+
+setInterval(createHeart,2000);
+
+
+
+
+
+
+
+// ===============================
+// SPARKLE EFFECT
+// ===============================
+
+
+function createSparkle(){
+
+
+let sparkle=document.createElement("div");
+
+
+sparkle.className="sparkle";
+
+
+
+sparkle.style.left=
+
+Math.random()*100+"vw";
+
+
+sparkle.style.top=
+
+Math.random()*100+"vh";
+
+
+
+document.body.appendChild(sparkle);
+
+
+
+setTimeout(()=>{
+
+
+sparkle.remove();
+
+
+},5000);
+
+
+
+}
+
+
+
+setInterval(createSparkle,1000);
+
+
+
+
+
+
+
+// ===============================
+// MUSIC SYSTEM
+// ===============================
+
+
+
+let music;
+
+
+
+function startMusic(){
+
+
+music=document.getElementById("music");
+
+
+if(!music) return;
+
+
+
+music.volume=.45;
+
+
+
+music.play()
+.then(()=>{
+
+
+localStorage.setItem(
+"musicPlaying",
+"true"
+);
+
+
+})
+.catch(()=>{
+
+
+console.log(
+"Music waiting for user interaction"
+);
+
+
+});
+
 
 }
 
 
 
 
-// =============================
-// MUSIC CONTROL
-// =============================
 
 
-let musicPlaying=false;
+function stopMusic(){
 
 
-function playMusic(){
+if(music){
 
 
-    const music =
-    document.getElementById("music");
+music.pause();
 
 
-    if(!musicPlaying){
+localStorage.setItem(
+"musicPlaying",
+"false"
+);
 
 
-        music.play();
-
-
-        musicPlaying=true;
-
-
-        document.querySelector(".music-btn").innerHTML="⏸️";
-
-
-    }
-
-    else{
-
-
-        music.pause();
-
-
-        musicPlaying=false;
-
-
-        document.querySelector(".music-btn").innerHTML="🎵";
-
-
-    }
+}
 
 
 }
@@ -243,30 +310,146 @@ function playMusic(){
 
 
 
-// =============================
-// NEXT PAGE TRANSITION
-// =============================
-
-
-function nextPage(){
-
-
-    const transition =
-    document.getElementById("transition");
-
-
-    transition.style.transform="translateX(0)";
 
 
 
-    setTimeout(()=>{
+
+// Continue music between pages
 
 
-        window.location.href="page2.html";
+window.addEventListener(
+"load",
+()=>{
 
 
-    },800);
+let saved=
 
+localStorage.getItem(
+"musicPlaying"
+);
+
+
+
+if(saved==="true"){
+
+
+startMusic();
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+// ===============================
+// BUTTON CLICK SOUND
+// ===============================
+
+
+
+document.addEventListener(
+"click",
+(e)=>{
+
+
+if(
+e.target.tagName==="BUTTON"
+){
+
+
+e.target.style.transform="scale(.95)";
+
+
+setTimeout(()=>{
+
+
+e.target.style.transform="";
+
+
+},150);
+
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+
+// ===============================
+// TYPING EFFECT
+// ===============================
+
+
+function typingEffect(element,text,speed=50){
+
+
+let i=0;
+
+
+element.innerHTML="";
+
+
+
+function type(){
+
+
+if(i<text.length){
+
+
+element.innerHTML+=text.charAt(i);
+
+
+i++;
+
+
+setTimeout(type,speed);
+
+
+}
+
+
+}
+
+
+type();
+
+
+
+}
+
+
+
+
+
+
+// ===============================
+// BACK TO TOP
+// ===============================
+
+
+function topPage(){
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
 
 
 }
